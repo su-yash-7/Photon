@@ -46,7 +46,37 @@ header h2 {
   justify-content: space-between;
   align-items: center;
   color: gray;
+  padding: 1rem 0rem;
 }
 .gallery-info a {
   color: gray;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 2rem 0rem;
+  width: 80%;
+  margin: auto;
+  row-gap: 5rem;
+  column-gap: 3rem;
+}
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nav-button {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.more {
+  padding: 1rem 3rem;
+  background: rgb(74, 68, 131);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 1.2rem;
 }
