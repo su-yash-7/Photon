@@ -29,20 +29,29 @@ function genetarePicturs(data){
         //console.log(photo);
         const galleryImg = document.createElement("div");
         galleryImg.classList.add("gallery-img");
-        gallery.innerHTML = `<img src=${photo.src.large}></img>
+        gallery.innerHTML = `
+        <div class="gallery-info">
         <p>${photo.photographer}</p>
+        <a href=${photo.src.original}>Downlode</a>
+        </div>
+        <img src=${photo.src.large}></img>
         `;
         gallery.appendChild(galleryImg);
     });
 }
 async function curatedPhotos(){
-    const data = await fetchApi("https://api.pexels.com/v1/curated?per_page=15&page=1")
+    const data = await fetchApi("https://api.pexels.com/v1/curated?per_page=15&per_page=1")
     genetarePicturs(data);
 }
 async function searchPhotos(query){
+    clear();
     const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`)
     genetarePicturs(data);
 
+}
+function clear(){
+    gallery.innerHTML = "";
+    searchInput.value = "";
 }
 curatedPhotos(); 
 

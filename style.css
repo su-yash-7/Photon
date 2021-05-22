@@ -41,3 +41,12 @@ header h2 {
   cursor: pointer;
   border-radius: 0px 25px 25px 0px;
 }
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+}
+.gallery-info a {
+  color: gray;
+}
